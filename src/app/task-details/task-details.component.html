@@ -1,0 +1,11 @@
+<div>
+  <div>{{ task.name }}</div>
+  <div>{{ task.description }}</div>
+  <div>Deadline: {{ task.date | date : "longDate" }}</div>
+  <div>Priority: {{ task.priority }}</div>
+  <div>Status {{ task.status }}</div>
+</div>
+<div>
+  <button mat-icon-button (click)="markAsDone()"><mat-icon>done</mat-icon></button>
+  <button mat-icon-button color="warn" (click)="deleteTask()"><mat-icon>delete</mat-icon></button>
+</div>

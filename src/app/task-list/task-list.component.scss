@@ -1,0 +1,16 @@
+:host {
+  .all-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 800px;
+    margin-inline: auto;
+    margin-top: 24px;
+
+    > * {
+      border: 1px solid blue;
+      border-radius: 8px;
+      padding: 16px;
+    }
+  }
+}

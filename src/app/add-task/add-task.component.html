@@ -1,0 +1,32 @@
+<form class="task-form" [formGroup]="taskForm" (ngSubmit)="addTask()">
+  <mat-form-field>
+    <mat-label>Task Name</mat-label>
+    <input matInput type="text" formControlName="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Task Description</mat-label>
+    <textarea matInput type="text" formControlName="description"> </textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Task Category</mat-label>
+    <mat-select formControlName="category">
+      @for (category of categoriesOfTask; track $index) {
+      <mat-option [value]="category">{{ category }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Deadline</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date" />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div>Select priority</div>
+  <mat-button-toggle-group formControlName="priority" class="toggle-group">
+    <mat-button-toggle value="low">Low</mat-button-toggle>
+    <mat-button-toggle value="high">High</mat-button-toggle>
+    <mat-button-toggle value="medium">Medium</mat-button-toggle>
+  </mat-button-toggle-group>
+  <button mat-stroked-button type="submit">Submit</button>
+</form>

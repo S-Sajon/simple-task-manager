@@ -1,0 +1,13 @@
+:host {
+  .task-form {
+    margin-inline: 100px;
+    margin-block: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: min(100%, 300px);
+  }
+  .toggle-group {
+    max-width: min-content;
+  }
+}
